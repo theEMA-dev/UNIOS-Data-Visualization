@@ -1,0 +1,77 @@
+/* Chart-specific styles */
+.line {
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: stroke-width 0.2s ease;
+}
+
+.line:hover {
+    stroke-width: 3;
+}
+
+/* Grid lines */
+.grid line {
+    stroke: var(--border-100);
+    stroke-opacity: 0.1;
+    shape-rendering: crispEdges;
+}
+
+/* Axes */
+.x-axis,
+.y-axis {
+    color: var(--text-300);
+}
+
+.x-axis line,
+.y-axis line {
+    stroke: none;
+}
+
+.x-axis text,
+.y-axis text {
+    fill: var(--text-300);
+    font-size: 10px;
+    font-family: 'Geist Mono', monospace;
+}
+
+/* Hover effects */
+.hover-group {
+    pointer-events: none;
+}
+
+.hover-line {
+    stroke: var(--text-200);
+    stroke-width: 1px;
+    stroke-dasharray: 3,3;
+}
+
+.hover-value {
+    fill: var(--text-100);
+    font-family: 'Geist Mono', monospace;
+    font-size: 12px;
+    paint-order: stroke;
+    stroke: var(--background-alpha-100);
+    stroke-width: 3px;
+}
+
+.hover-area {
+    cursor: crosshair;
+}
+
+/* Chart states */
+.chart-container.loading .chart {
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.chart-container.error .chart {
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+/* Clip path for line animations */
+clipPath {
+    transform-box: fill-box;
+    transform-origin: center;
+}

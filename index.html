@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>European Countries Map</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dataToggle.css">
+    <link rel="stylesheet" href="css/dataPanels.css">
+    <link rel="stylesheet" href="css/charts.css">
+    <!-- D3.js and TopoJSON libraries -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/topojson@3"></script>
+</head>
+<body>
+    <header class="app-header">
+        <div class="header-content">
+            <div class="site-name">UNIOS Data Visualization</div>
+            <div class="header-tools">
+                <!-- Additional tools will go here -->
+            </div>
+        </div>
+    </header>
+
+    <div id="map-container">
+        <!-- SVG will be added here by D3 -->
+    </div>
+
+    <script src="js/charts/chartUtils.js"></script>
+    <script src="js/ui/dataToggle.js"></script>
+    <script src="js/data/eurostatAPI.js"></script>
+    <script src="js/data/worldBankAPI.js"></script>
+    <script src="js/dataModules/economicsModule.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Initialize modules after DOM loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new DataToggle();
+            new EconomicsModule();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+.data-toggle {
+    position: relative;
+    font-family: 'Geist', sans-serif;
+    user-select: none;
+}
+
+.selected-module {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: .25rem .75rem;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 100px;
+    color: var(--text-100);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.selected-module:hover {
+    border: 1px solid var(--border-200);
+}
+
+.module-dropdown {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    min-width: 200px;
+    background: var(--background-alpha-100);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-200);
+    border-radius: 12px;
+    padding: 0.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.data-toggle.active .module-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.module-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    color: var(--text-200);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.module-option:hover:not(.disabled) {
+    background: var(--background-alpha-200);
+    color: var(--text-100);
+}
+
+.module-option.active {
+    color: var(--cyan-500);
+    background: var(--cyan-100);
+}
+
+.module-option.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.coming-soon {
+    margin-left: auto;
+    font-size: 0.75rem;
+    color: var(--text-300);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.dropdown-arrow {
+    font-size: 0.75rem;
+    margin-left: 0.25rem;
+    transition: transform 0.3s ease;
+}
+
+.data-toggle.active .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.module-icon {
+    font-size: 1em;
+}
+
+/* Animation for module switching */
+.module-option {
+    position: relative;
+    overflow: hidden;
+}
+
+.module-option::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--cyan-500);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.module-option:active:not(.disabled)::after {
+    opacity: 0.1;
+}

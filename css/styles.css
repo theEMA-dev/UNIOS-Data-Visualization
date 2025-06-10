@@ -88,34 +88,61 @@ footer {
 
 .site-nav {
   display: flex;
-  gap: 1.5rem;
+  gap: .5rem;
 }
 
-.site-nav a {
+.site-nav button {
   color: var(--text-200);
-  text-decoration: none;
+  background-color: transparent;
+  padding: .25rem 1rem;
+  border-radius: 100px;
+  border: none;
+  cursor: pointer;
   font-family: 'Geist Mono', monospace;
   font-size: .875rem;
   font-weight: 400;
   transition: all 0.3s ease;
 }
 
-.site-nav a.active {
-  text-decoration: underline;
-  text-decoration-color: var(--text-100);
-  text-underline-offset: 4px;
+.site-nav button.active {
+  background-color: var(--background-alpha-300);
+  backdrop-filter: blur(10px);
+  outline: 1px solid var(--border-100);
 }
 
-.site-nav a#link-economics:hover {
+.site-nav button#filter-none, .site-nav button#infobox {
+  padding: .25rem;
+}
+
+.site-nav button#filter-none.active, .site-nav button#infobox.active {
+  background-color: inherit;
+  backdrop-filter: none;
+  outline: none;
+}
+
+.site-nav button svg {
+  height: 16px;
+  width: auto;
+}
+
+.site-nav button#infobox:hover {
+  color: var(--text-100);
+}
+
+.site-nav button#filter-none:hover {
+  color: var(--text-100);
+}
+
+.site-nav button#filter-gdp:hover {
   color: var(--teal-500);
 }
 
-.site-nav a#link-enviroment:hover {
-  color: var(--green-500);
+.site-nav button#filter-inflation:hover {
+  color: var(--red-500);
 }
 
-.site-nav a#link-covid:hover {
-  color: var(--red-500);
+.site-nav button#filter-population:hover {
+  color: var(--green-500);
 }
 
 .header-tools {
@@ -191,4 +218,5 @@ svg {
   text-rendering: geometricPrecision;
   shape-rendering: geometricPrecision;
   will-change: font-size;
+  z-index: 10;
 }

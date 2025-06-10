@@ -1,0 +1,9 @@
+.overlay-group {
+  pointer-events: none;
+  z-index: 5;
+}
+
+.overlay-path {
+  pointer-events: none;
+  z-index: 5;
+}

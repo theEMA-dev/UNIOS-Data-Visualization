@@ -170,6 +170,10 @@ const g = svg.append('g');
 const projection = d3.geoMercator();
 const pathGenerator = d3.geoPath().projection(projection);
 
+// Make projection and svg globally available for overlays
+window.projection = projection;
+window.svg = svg;
+
 // Add resize handler
 window.addEventListener('resize', () => {
     if (window.countries) {

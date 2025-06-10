@@ -4,7 +4,7 @@ class ChartUtils {
             gdp: 'var(--teal-500)',
             inflation: 'var(--red-500)',
             unemployment: 'var(--pink-500)',
-            population: 'var(--cyan-500)',
+            population: 'var(--green-500)',
             axis: 'var(--text-300)',
             grid: 'var(--border-100)',
             text: 'var(--text-100)',

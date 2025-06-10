@@ -13,21 +13,23 @@
     <script src="https://unpkg.com/topojson@3"></script>
 </head>
 <body>
-    <header class="app-header">
-        <div class="header-content">
-            <div class="site-name">UNIOS Data Visualization</div>
-            <div class="header-tools">
-                <!-- Additional tools will go here -->
-            </div>
-        </div>
+    <header>
+        <div class="site-name">Emir Kaynar ▸ Europe Data Map v1</div>
     </header>
 
     <div id="map-container">
         <!-- SVG will be added here by D3 -->
     </div>
 
+    <footer>
+        <div class="site-nav">
+            <a id="link-economics" class="active" href="http://">ECONOMICS</a>
+            <a id="link-enviroment" href="http://">ENVIROMENT</a>
+            <a id="link-covid" href="http://">COVID-19</a>
+        </div>
+    </footer>
+
     <script src="js/charts/chartUtils.js"></script>
-    <script src="js/ui/dataToggle.js"></script>
     <script src="js/data/eurostatAPI.js"></script>
     <script src="js/data/worldBankAPI.js"></script>
     <script src="js/dataModules/economicsModule.js"></script>
@@ -35,7 +37,6 @@
     <script>
         // Initialize modules after DOM loads
         document.addEventListener('DOMContentLoaded', () => {
-            new DataToggle();
             new EconomicsModule();
         });
     </script>

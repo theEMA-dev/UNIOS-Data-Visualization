@@ -10,7 +10,7 @@ function getContainerDimensions() {
 // Function to identify small countries
 function isSmallCountry(d) {
     const area = d3.geoArea(d);
-    return area < 0.0002; // Fine-tuned threshold for small territories
+    return area < 0.0007; // Fine-tuned threshold for small territories
 }
 
 // Function to calculate font size based on country area

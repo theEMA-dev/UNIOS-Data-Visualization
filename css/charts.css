@@ -41,7 +41,7 @@
 }
 
 .hover-line {
-    stroke: var(--text-200);
+    stroke: var(--text-400);
     stroke-width: 1px;
     stroke-dasharray: 3,3;
 }

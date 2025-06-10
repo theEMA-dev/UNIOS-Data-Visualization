@@ -22,6 +22,8 @@
   --red-500: rgb(251, 114, 114);
   --pink-100: rgb(66, 17, 46);
   --pink-500: rgb(251, 114, 178);
+  --green-100: rgb(17, 66, 17);
+  --green-500: rgb(114, 251, 114);
 }
 
 @font-face {
@@ -49,14 +51,12 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-.app-header {
+header {
   position: fixed;
   top: .5rem;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
-  width: calc(100% - 42rem);
-  max-width: 1200px;
 }
 
 .header-content {
@@ -71,10 +71,51 @@ body {
 }
 
 .site-name {
-  color: var(--text-100);
-  font-family: 'Geist', sans-serif;
-  font-size: 1rem;
+  color: var(--cyan-500);
+  font-family: 'Geist Mono', monospace;
+  text-transform: uppercase;
+  font-size: .875rem;
   font-weight: 400;
+}
+
+footer {
+  position: fixed;
+  bottom: .5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+
+.site-nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.site-nav a {
+  color: var(--text-200);
+  text-decoration: none;
+  font-family: 'Geist Mono', monospace;
+  font-size: .875rem;
+  font-weight: 400;
+  transition: all 0.3s ease;
+}
+
+.site-nav a.active {
+  text-decoration: underline;
+  text-decoration-color: var(--text-100);
+  text-underline-offset: 4px;
+}
+
+.site-nav a#link-economics:hover {
+  color: var(--teal-500);
+}
+
+.site-nav a#link-enviroment:hover {
+  color: var(--green-500);
+}
+
+.site-nav a#link-covid:hover {
+  color: var(--red-500);
 }
 
 .header-tools {

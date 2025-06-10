@@ -2,7 +2,7 @@
     position: fixed;
     top: .5rem;
     height: calc(100% - 1rem);
-    width: 20rem;
+    width: 24rem;
     background: var(--background-alpha-100);
     backdrop-filter: blur(10px);
     border: 1px solid var(--border-100);
